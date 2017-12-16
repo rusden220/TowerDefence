@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TowerDefense.Engine
+namespace TowerDefense.Core.IO
 {
-
-	public class TDEngine
+	public class KeyboardStateProvider
 	{
 
 	}

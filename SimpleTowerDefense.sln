@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Core", "TowerD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Engine", "TowerDefense.Engine\TowerDefense.Engine.csproj", "{BC155914-7410-48DA-8EE9-8051CFE91D2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Render", "TowerDefense.Render\TowerDefense.Render.csproj", "{9AE74E7B-765B-4061-9E8C-E4F4B5D577E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Render.Image", "TowerDefense.Render.Image\TowerDefense.Render.Image.csproj", "{D08CF63D-BE9A-4D69-8354-3553EAF61775}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{BC155914-7410-48DA-8EE9-8051CFE91D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC155914-7410-48DA-8EE9-8051CFE91D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC155914-7410-48DA-8EE9-8051CFE91D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE74E7B-765B-4061-9E8C-E4F4B5D577E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE74E7B-765B-4061-9E8C-E4F4B5D577E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE74E7B-765B-4061-9E8C-E4F4B5D577E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE74E7B-765B-4061-9E8C-E4F4B5D577E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08CF63D-BE9A-4D69-8354-3553EAF61775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08CF63D-BE9A-4D69-8354-3553EAF61775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08CF63D-BE9A-4D69-8354-3553EAF61775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08CF63D-BE9A-4D69-8354-3553EAF61775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

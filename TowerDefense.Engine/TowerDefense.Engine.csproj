@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLayerContainer.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="IGameLayerWorker.cs" />
+    <Compile Include="Map\GameMapContainer.cs" />
+    <Compile Include="Map\GameMapFieldContainer.cs" />
+    <Compile Include="Map\MapEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TDEngine.cs" />
+    <Compile Include="GameEngine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TowerDefense.Render.Image\TowerDefense.Render.Image.csproj">
+      <Project>{d08cf63d-be9a-4d69-8354-3553eaf61775}</Project>
+      <Name>TowerDefense.Render.Image</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

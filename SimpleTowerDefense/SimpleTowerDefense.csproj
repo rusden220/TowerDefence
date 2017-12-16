@@ -90,6 +90,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Scripts\UpdateVersionAfterReleaseBuild.ps1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -99,6 +100,18 @@
       <Project>{56558a4f-8e0a-4ec0-b2eb-6734fb6e0f16}</Project>
       <Name>TowerDefense.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TowerDefense.Engine\TowerDefense.Engine.csproj">
+      <Project>{bc155914-7410-48da-8ee9-8051cfe91d2a}</Project>
+      <Name>TowerDefense.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TowerDefense.Render.Image\TowerDefense.Render.Image.csproj">
+      <Project>{d08cf63d-be9a-4d69-8354-3553eaf61775}</Project>
+      <Name>TowerDefense.Render.Image</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TowerDefense.Render\TowerDefense.Render.csproj">
+      <Project>{9ae74e7b-765b-4061-9e8c-e4f4b5d577e8}</Project>
+      <Name>TowerDefense.Render</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -107,7 +120,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -File "$(ProjectDir)Scripts\UpdateVersionAfterBuild.ps1" -ProjectDir "$(ProjectDir)Properties\AssemblyInfo.cs" -buildType "$(ConfigurationName)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
