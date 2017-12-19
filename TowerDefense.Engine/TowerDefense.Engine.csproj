@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameLayerContainer.cs" />
+    <Compile Include="GameSettingsEngineData.cs" />
+    <Compile Include="GameLayerData.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="IGameLayerWorker.cs" />
     <Compile Include="Map\GameMapContainer.cs" />

@@ -44,12 +44,12 @@ namespace SimpleTowerDefense
 		}
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
-			_gameCore.AddMouseDown(new Point(e.X, e.Y), e);
+			_gameCore.AddMouseUp(new Point(e.X, e.Y), e);
 			base.OnMouseUp(e);
 		}
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
-			_gameCore.AddMouseDown(new Point(e.X, e.Y), e);
+			_gameCore.AddMouseMove(new Point(e.X, e.Y), e);
 			base.OnMouseMove(e);
 		}
 		

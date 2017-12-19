@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameSettingsDataLoader.cs" />
     <Compile Include="GameCoreException.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="IO\KeyboardStateProvider.cs" />

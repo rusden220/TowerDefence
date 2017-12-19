@@ -13,7 +13,7 @@ namespace TowerDefense.Render
     {
 		private GameLayerWorkerBase[] _arrayGameLayer;
 		private Bitmap _currentBitmapState;
-		public GameRender(Size size, ref GameLayerWorkerBase[] arrayGameLayerWorker)
+		public GameRender(Size size, GameLayerWorkerBase[] arrayGameLayerWorker)
 		{
 			this.MainGameBitmapSize = size;
 			this._arrayGameLayer = arrayGameLayerWorker;
@@ -33,13 +33,13 @@ namespace TowerDefense.Render
 				graphics.DrawImage(layer.GetGameLayerContainer.LayerBitmap, layer.GetGameLayerContainer.Location);
 			}
 		}
-		public Bitmap CreateLayerBitmap(GameLayerContainer gameLayer, long timeStemp)
+		public Bitmap CreateLayerBitmap(GameLayerData gameLayer, long timeStemp)
 		{
 			var resultBitmap = new Bitmap(gameLayer.Location.Width, gameLayer.Location.Height);
 			var graphics = Graphics.FromImage(resultBitmap);
 
 			foreach (var gameObject in gameLayer.GameObjects)
-				graphics.DrawImage(gameObject.Image, gameObject.Location);
+				graphics.DrawImage(gameObject.Image.GetNextBitmap(timeStemp), gameObject.Location);
 
 			return resultBitmap;
 		}

@@ -28,9 +28,9 @@ namespace TowerDefense.Core
 
 		public GameCore(Size mainGameImageSize)
 		{			
-			_gameEngine = new GameEngine(new GameLayerContainerCreator());
+			_gameEngine = new GameEngine( );
 			var layers = _gameEngine.GetGameLayersContainer;
-			_gameRender = new GameRender(mainGameImageSize, ref layers);
+			_gameRender = new GameRender(mainGameImageSize, layers);
 			_gameTimer = new GameTimer(MainGameLoopHandler);
 		}
 		public void StartGame()
@@ -38,8 +38,7 @@ namespace TowerDefense.Core
 			if (RedrawEventHendler == null)
 				throw new GameCoreException($"{nameof(RedrawEventHendler)} must be set");
 			_gameTimer.Start();
-		}
-
+		} 
 		/// <summary>
 		/// mouse click handler 
 		/// </summary>

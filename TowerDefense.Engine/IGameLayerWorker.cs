@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace TowerDefense.Engine
 {
 	public interface IGameLayerContainerCreator
 	{
-		GameLayerContainer CreateGameLayerContainer();
+		GameLayerData CreateGameLayerContainer();
 	}
 	public abstract class GameLayerWorkerBase
 	{
-		protected GameLayerContainer _gameLayerContainer;
+		protected GameLayerData _gameLayerContainer;
 		public GameLayerWorkerBase(IGameLayerContainerCreator creator)
 		{
 			_gameLayerContainer = creator.CreateGameLayerContainer();
 		}
-		public GameLayerContainer GetGameLayerContainer { get { return _gameLayerContainer; } }
+		public GameLayerData GetGameLayerContainer { get { return _gameLayerContainer; } }
 		
 		public abstract void UpdateState();
 	}
