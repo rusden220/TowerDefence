@@ -7,21 +7,57 @@ using System.Drawing;
 
 namespace TowerDefense.Render.Image
 {
-	public class AnimationBitmap
-	{
-		//TODO:rewrite to list 
-		private Bitmap _mainBitmap;
-		public bool isAnimated { get; set; }
+    public class AnimationBitmap
+    {
+        private List<Bitmap> _mainBitmapList;
+        //private long _timeIntervalTicks;
+        private int _currentIndexBitmapArray;
 
-		//TODO: remove implicit convert
-		public static implicit operator Bitmap(AnimationBitmap ab)
-		{
-			return ab._mainBitmap;
-		}
-		//TODO: remove implicit convert
-		public static implicit operator AnimationBitmap(Bitmap bm)
-		{
-			return new AnimationBitmap() { _mainBitmap = bm };
-		}
-	}
+        //contains the time the last time were given bitmap
+        private long _timeOfLastReturnBitmap;
+
+        public AnimationBitmap(long timeIntervalTicks, params Bitmap[] arrayBitmap)
+        {
+            this.TimeIntervalTicks = timeIntervalTicks;
+            _mainBitmapList = new List<Bitmap>();
+            AddBitmaps(arrayBitmap);
+            _currentIndexBitmapArray = 0;
+        }
+        public void AddBitmaps(params Bitmap[] arrayBitmap)
+        {
+            _mainBitmapList.AddRange(arrayBitmap);
+        }
+        public Bitmap GetNextBitmap(long timeStempTicks)
+        {
+            if (timeStempTicks > TimeIntervalTicks || timeStempTicks + _timeOfLastReturnBitmap > TimeIntervalTicks)
+            {
+                System.Diagnostics.Debug.WriteLine("new");
+                _timeOfLastReturnBitmap = 0;
+                return _mainBitmapList[GetNextIndexInBitmapArray()];
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("old");
+                _timeOfLastReturnBitmap += timeStempTicks;
+                return _mainBitmapList[_currentIndexBitmapArray];
+            }
+        }
+        public long TimeIntervalTicks { get; set; }
+
+        public bool isСyclic { get; set; }
+
+        private int GetNextIndexInBitmapArray()
+        {
+            if (_currentIndexBitmapArray + 1 == _mainBitmapList.Count)
+            {
+                if (isСyclic)
+                    _currentIndexBitmapArray = 0;
+            }
+            else
+                _currentIndexBitmapArray++;
+
+            return _currentIndexBitmapArray;
+        }
+
+    }
 }
