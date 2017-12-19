@@ -28,7 +28,7 @@ namespace TowerDefense.Core
 
 		public GameCore(Size mainGameImageSize)
 		{			
-			_gameEngine = new GameEngine( );
+			_gameEngine = new GameEngine(new GameLayerDataCreator());
 			var layers = _gameEngine.GetGameLayersContainer;
 			_gameRender = new GameRender(mainGameImageSize, layers);
 			_gameTimer = new GameTimer(MainGameLoopHandler);
