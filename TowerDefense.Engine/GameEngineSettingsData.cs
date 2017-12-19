@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TowerDefense.Engine
 {
-    public class GameSettingsEngineData
+    public class GameEngineSettingsData
     {
 
     }

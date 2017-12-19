@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameSettingsEngineData.cs" />
+    <Compile Include="GameEngineSettingsData.cs" />
     <Compile Include="GameLayerData.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="IGameLayerWorker.cs" />

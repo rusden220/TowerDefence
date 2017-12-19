@@ -27,7 +27,8 @@ namespace TowerDefense.Core
 
 
 		public GameCore(Size mainGameImageSize)
-		{			
+		{
+			new GameSettingsDataLoader().LoadGameSettingsFromFile(null);
 			_gameEngine = new GameEngine(new GameLayerDataCreator());
 			var layers = _gameEngine.GetGameLayersContainer;
 			_gameRender = new GameRender(mainGameImageSize, layers);
@@ -56,14 +57,14 @@ namespace TowerDefense.Core
 			Trace.WriteLine($"{nameof(AddMouseMove)}");
 		}
 		
-		internal void MainGameLoopHandler(long elapsedMiliseconds)
+		internal void MainGameLoopHandler(long elapsedTicks)
 		{
-			Trace.WriteLine(elapsedMiliseconds);
+			Trace.WriteLine(elapsedTicks);
 
-			_gameEngine.UpdateState(elapsedMiliseconds);
-			_gameRender.UpdateState(elapsedMiliseconds);
+			_gameEngine.UpdateState(elapsedTicks);
+			_gameRender.UpdateState(elapsedTicks);
 
-			//yes i don't check null (the best way is ?. but slowly)
+			//yes i don't check null (the best way is ?. but slowly then this)
 			RedrawEventHendler.Invoke(this, _gameRender.GetCurrentBitmapSate);
 		}
 		

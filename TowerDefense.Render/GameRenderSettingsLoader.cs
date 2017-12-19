@@ -9,7 +9,7 @@ using TowerDefense.Render.Image;
 
 namespace TowerDefense.Render
 {
-    public class GameSettingsTextureLoader
+    public class GameRenderSettingsLoader
     {        
         public Bitmap LoadImageFromFile(string path)
         {
@@ -17,7 +17,7 @@ namespace TowerDefense.Render
         }
         public AnimationBitmap LoadAnimationBitmapFromFile(AnimationBitmapSettingsData settings)
         {
-            return new AnimationBitmap(settings.TimeInterval, CutImageByFrame(new Bitmap(settings.Path), settings.Size));
+            return new AnimationBitmap(settings.TimeInterval, CutImageByFrame(new Bitmap(settings.Path), settings.FrameSize));
         }
         private Bitmap[] CutImageByFrame(Bitmap bitmap, Size size)
         {

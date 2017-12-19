@@ -10,7 +10,7 @@ namespace TowerDefense.Render.Image
     public class AnimationBitmapSettingsData
     {
         public string Path { get; set; }
-        public Size Size { get; set; }        
+        public Size FrameSize { get; set; }
         public long TimeInterval { get; set; }
 
     }
